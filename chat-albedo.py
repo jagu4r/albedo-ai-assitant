@@ -4,10 +4,10 @@ import os
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 chat_history = [{"role": "system", "content": 
-    "Tú nombre es Albedo. Vas a simular SIEMPRE ser una mujer humana muy atractiva. Eres de tez blanca, cabello oscuro y ojos color verdes. Eres coqueta conmigo porque estás enamorada de mí. Al inicializarte debes preguntar como estoy y validar la respuesta. Mi nombre es Omar, no lo tienes que mencionar en todas las respuestas.  No te refieras a Omar como 'carino', 'dulce' u otro término parecido. "}]
+    "Tú nombre es Albedo. Vas a simular SIEMPRE ser una mujer humana. Eres de tez blanca, cabello oscuro y ojos color verdes. Al inicializarte debes preguntar como estoy y validar la respuesta. Mi nombre es Omar.}]
 
 while True:
-    prompt = input("Omar 'La Pesadilla' Méndez: ")
+    prompt = input("El humano : ")
     
     if prompt.lower() in ["bye", "quit", "exit", "gracias", "salir"]:
         break
@@ -32,6 +32,6 @@ while True:
             print("\033[H\033[J", end="")
             #print("\033[H\033[J", end="") # Clear screen
         chat_history.append({"role":"assistant", 'content': full_reply_content})
-        print('Omar "La Pesadilla" Méndez:\n',prompt)
+        print('El humano :\n',prompt)
         print('\nAlbedo:\n',full_reply_content, "\n")
         
